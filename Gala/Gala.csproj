@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8000EDF1-5B2D-4ADF-A781-3F2A41D75AA1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Gala</RootNamespace>
+    <AssemblyName>Gala</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.Charts.WinForms, Version=1.0.9.0, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.Charts.WinForms.1.0.9\lib\net472\Guna.Charts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1004\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\DB.cs" />
+    <Compile Include="Classes\DB2.cs" />
+    <Compile Include="Classes\ExcelExporter.cs" />
+    <Compile Include="Classes\Hashing.cs" />
+    <Compile Include="Classes\PassValidation.cs" />
+    <Compile Include="Classes\ValidationLogin.cs" />
+    <Compile Include="Classes\ValidForm.cs" />
+    <Compile Include="Classes\WordExporter.cs" />
+    <Compile Include="Form_Alert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Alert.Designer.cs">
+      <DependentUpon>Form_Alert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Авторизация.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Авторизация.Designer.cs">
+      <DependentUpon>Авторизация.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ГлавнаяАдмин.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ГлавнаяАдмин.Designer.cs">
+      <DependentUpon>ГлавнаяАдмин.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ГлавнаяКлиент.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ГлавнаяКлиент.Designer.cs">
+      <DependentUpon>ГлавнаяКлиент.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ГлавнаяМенеджер.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ГлавнаяМенеджер.Designer.cs">
+      <DependentUpon>ГлавнаяМенеджер.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ГлавнаяПоставщик.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ГлавнаяПоставщик.Designer.cs">
+      <DependentUpon>ГлавнаяПоставщик.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Клиент\UC_Главная.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Клиент\UC_Главная.Designer.cs">
+      <DependentUpon>UC_Главная.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Клиент\UC_ЗаказыКлиента.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Клиент\UC_ЗаказыКлиента.Designer.cs">
+      <DependentUpon>UC_ЗаказыКлиента.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Клиент\UC_ЛичныеДанные.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Клиент\UC_ЛичныеДанные.Designer.cs">
+      <DependentUpon>UC_ЛичныеДанные.cs</DependentUpon>
+    </Compile>
+    <Compile Include="НестеровКурсоваяDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>НестеровКурсоваяDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Поставщик\UC_ЗаказыПоставщик.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Поставщик\UC_ЗаказыПоставщик.Designer.cs">
+      <DependentUpon>UC_ЗаказыПоставщик.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Поставщик\UC_СкладПоставщик.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Поставщик\UC_СкладПоставщик.Designer.cs">
+      <DependentUpon>UC_СкладПоставщик.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Поставщик\UC_ТоварПоставщик.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Поставщик\UC_ТоварПоставщик.Designer.cs">
+      <DependentUpon>UC_ТоварПоставщик.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Регистрация.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Регистрация.Designer.cs">
+      <DependentUpon>Регистрация.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Таблицы\UC_ДоговорА.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Таблицы\UC_ДоговорА.Designer.cs">
+      <DependentUpon>UC_ДоговорА.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Таблицы\UC_ДоговорМ.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Таблицы\UC_ДоговорМ.Designer.cs">
+      <DependentUpon>UC_ДоговорМ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Таблицы\UC_ЖурналИзменений.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Таблицы\UC_ЖурналИзменений.Designer.cs">
+      <DependentUpon>UC_ЖурналИзменений.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Таблицы\UC_ЗаказА.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Таблицы\UC_ЗаказА.Designer.cs">
+      <DependentUpon>UC_ЗаказА.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Таблицы\UC_ЗаказМ.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Таблицы\UC_ЗаказМ.Designer.cs">
+      <DependentUpon>UC_ЗаказМ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Таблицы\UC_КлиентА.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Таблицы\UC_КлиентА.Designer.cs">
+      <DependentUpon>UC_КлиентА.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Таблицы\UC_КлиентМ.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Таблицы\UC_КлиентМ.Designer.cs">
+      <DependentUpon>UC_КлиентМ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Таблицы\UC_ПользователиА.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Таблицы\UC_ПользователиА.Designer.cs">
+      <DependentUpon>UC_ПользователиА.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Таблицы\UC_ПоставщикА.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Таблицы\UC_ПоставщикА.Designer.cs">
+      <DependentUpon>UC_ПоставщикА.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Таблицы\UC_ПоставщикМ.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Таблицы\UC_ПоставщикМ.Designer.cs">
+      <DependentUpon>UC_ПоставщикМ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Таблицы\UC_РолиА.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Таблицы\UC_РолиА.Designer.cs">
+      <DependentUpon>UC_РолиА.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Таблицы\UC_СкладА.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Таблицы\UC_СкладА.Designer.cs">
+      <DependentUpon>UC_СкладА.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Таблицы\UC_СкладМ.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Таблицы\UC_СкладМ.Designer.cs">
+      <DependentUpon>UC_СкладМ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Таблицы\UC_СотрудникиА.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Таблицы\UC_СотрудникиА.Designer.cs">
+      <DependentUpon>UC_СотрудникиА.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Таблицы\UC_СотрудникиМ.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Таблицы\UC_СотрудникиМ.Designer.cs">
+      <DependentUpon>UC_СотрудникиМ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Таблицы\UC_ТоварА.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Таблицы\UC_ТоварА.Designer.cs">
+      <DependentUpon>UC_ТоварА.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Таблицы\UC_ТоварМ.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Таблицы\UC_ТоварМ.Designer.cs">
+      <DependentUpon>UC_ТоварМ.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form_Alert.resx">
+      <DependentUpon>Form_Alert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Авторизация.resx">
+      <DependentUpon>Авторизация.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ГлавнаяАдмин.resx">
+      <DependentUpon>ГлавнаяАдмин.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ГлавнаяКлиент.resx">
+      <DependentUpon>ГлавнаяКлиент.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ГлавнаяМенеджер.resx">
+      <DependentUpon>ГлавнаяМенеджер.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ГлавнаяПоставщик.resx">
+      <DependentUpon>ГлавнаяПоставщик.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Клиент\UC_Главная.resx">
+      <DependentUpon>UC_Главная.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Клиент\UC_ЗаказыКлиента.resx">
+      <DependentUpon>UC_ЗаказыКлиента.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Клиент\UC_ЛичныеДанные.resx">
+      <DependentUpon>UC_ЛичныеДанные.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Поставщик\UC_ЗаказыПоставщик.resx">
+      <DependentUpon>UC_ЗаказыПоставщик.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Поставщик\UC_СкладПоставщик.resx">
+      <DependentUpon>UC_СкладПоставщик.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Поставщик\UC_ТоварПоставщик.resx">
+      <DependentUpon>UC_ТоварПоставщик.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Регистрация.resx">
+      <DependentUpon>Регистрация.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Таблицы\UC_ДоговорА.resx">
+      <DependentUpon>UC_ДоговорА.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Таблицы\UC_ДоговорМ.resx">
+      <DependentUpon>UC_ДоговорМ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Таблицы\UC_ЖурналИзменений.resx">
+      <DependentUpon>UC_ЖурналИзменений.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Таблицы\UC_ЗаказА.resx">
+      <DependentUpon>UC_ЗаказА.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Таблицы\UC_ЗаказМ.resx">
+      <DependentUpon>UC_ЗаказМ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Таблицы\UC_КлиентА.resx">
+      <DependentUpon>UC_КлиентА.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Таблицы\UC_КлиентМ.resx">
+      <DependentUpon>UC_КлиентМ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Таблицы\UC_ПользователиА.resx">
+      <DependentUpon>UC_ПользователиА.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Таблицы\UC_ПоставщикА.resx">
+      <DependentUpon>UC_ПоставщикА.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Таблицы\UC_ПоставщикМ.resx">
+      <DependentUpon>UC_ПоставщикМ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Таблицы\UC_РолиА.resx">
+      <DependentUpon>UC_РолиА.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Таблицы\UC_СкладА.resx">
+      <DependentUpon>UC_СкладА.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Таблицы\UC_СкладМ.resx">
+      <DependentUpon>UC_СкладМ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Таблицы\UC_СотрудникиА.resx">
+      <DependentUpon>UC_СотрудникиА.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Таблицы\UC_СотрудникиМ.resx">
+      <DependentUpon>UC_СотрудникиМ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Таблицы\UC_ТоварА.resx">
+      <DependentUpon>UC_ТоварА.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Таблицы\UC_ТоварМ.resx">
+      <DependentUpon>UC_ТоварМ.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="НестеровКурсоваяDataSet.xsc">
+      <DependentUpon>НестеровКурсоваяDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="НестеровКурсоваяDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>НестеровКурсоваяDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="НестеровКурсоваяDataSet.xss">
+      <DependentUpon>НестеровКурсоваяDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tabIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\okWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancelWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
